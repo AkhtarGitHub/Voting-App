@@ -1,0 +1,34 @@
+<%- include('../header') %>
+
+<div class="main-content">
+  <h1>Active Polls</h1>
+  <ul id="polls">
+    <% polls.forEach((poll) => { %>
+    <li class="poll-container" id="<%= poll._id %>">
+      <h2><%= poll.question %></h2>
+      <ul class="poll-options">
+        <% poll.options.forEach(({ answer, votes }) => { %>
+        <li id="<%= poll._id %>_<%= answer %>">
+          <strong><%= answer %>:</strong> <%= votes %> votes
+        </li>
+        <% }) %>
+      </ul>
+      <form class="poll-form button-container">
+        <% poll.options.forEach(({ answer }) => { %>
+        <button
+          class="action-button vote-button"
+          type="submit"
+          value="<%= answer %>"
+          name="poll-option"
+        >
+          Vote for <%= answer %>
+        </button>
+        <% }) %>
+        <input type="hidden" value="<%= poll._id %>" name="poll-id" />
+      </form>
+    </li>
+    <% }) %>
+  </ul>
+</div>
+
+<script src="/frontend.js" type="application/javascript"></script>

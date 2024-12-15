@@ -1,0 +1,27 @@
+<%- include('header') %>
+
+<div class="main-content">
+  <h1>Profile</h1>
+  <div class="profile-container">
+    <h2>Welcome, <%= user.username %>!</h2>
+    <p>You have voted in <%= votedPolls.length %> poll(s).</p>
+
+    <% if (votedPolls.length > 0) { %>
+    <h3>Your Voted Polls:</h3>
+    <ul>
+      <% votedPolls.forEach(poll => { %>
+      <li>
+        <strong><%= poll.question %></strong>
+        <ul>
+          <% poll.options.forEach(option => { %>
+          <li><%= option.answer %>: <%= option.votes %> votes</li>
+          <% }) %>
+        </ul>
+      </li>
+      <% }) %>
+    </ul>
+    <% } else { %>
+    <p>You haven't voted in any polls yet.</p>
+    <% } %>
+  </div>
+</div>

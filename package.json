@@ -1,0 +1,32 @@
+{
+  "name": "voting-app",
+  "version": "1.0.0",
+  "description": "A real-time voting application built with Node.js, Express, and MongoDB.",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon index.js"
+  },
+  "keywords": [
+    "voting",
+    "app",
+    "nodejs",
+    "express",
+    "mongodb",
+    "real-time"
+  ],
+  "author": "Mohammad Hossain",
+  "license": "MIT",
+  "dependencies": {
+    "bcrypt": "^5.1.0",
+    "ejs": "^3.1.9",
+    "express": "^4.18.2",
+    "express-session": "^1.17.3",
+    "express-ws": "^4.0.0",
+    "mongoose": "^7.5.0",
+    "open": "^9.0.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.1"
+  }
+}
